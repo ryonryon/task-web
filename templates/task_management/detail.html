@@ -2,8 +2,8 @@
 {% block content %}
 
     <div class="content">
-
-        <span>this is detail html</span>
-
+        {% if question_id %}
+            <span>{{ question_id }}</span>
+        {% endif %}
     </div>
 {% endblock %}
