@@ -9,7 +9,7 @@ class IndexView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         latest_question_list = Question.objects.order_by('-pub_date')[:5]
-        template = loader.get_template('task_management/index.html')
+        template = loader.get_template(self.template_name)
         context = {
             'latest_question_list': latest_question_list,
         }
