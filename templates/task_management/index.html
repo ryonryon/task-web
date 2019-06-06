@@ -3,7 +3,7 @@
 
     <div class="content">
 
-        {% if latest_question_list %}
+        {% if task_list %}
             <table class="table table-stripe">
                 <thead>
                     <tr>
@@ -12,11 +12,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for question in latest_question_list %}
+                    {% for task in task_list %}
                         <tr>
                             <td></td>
                             <td>
-                                <a href="/{{ question.id }}/"> {{ question.question_text }}</a>
+                                <a href="/{{ task.title }}/"> {{ task.title }}</a>
                             </td>
                         </tr>
                     {% endfor %}

@@ -8,11 +8,11 @@ class DetailView(TemplateView):
 
     def get(self, request, *args, **kwargs):
 
-        question = kwargs['question_id']
+        task_title = kwargs['title']
 
         template = loader.get_template(self.template_name)
         context = {
-            'question_id': question,
+            'task_title': task_title,
         }
         return HttpResponse(template.render(context, request))
 
