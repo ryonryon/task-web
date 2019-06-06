@@ -10,7 +10,8 @@ class IndexView(TemplateView):
     def get(self, request, *args, **kwargs):
         template = loader.get_template(self.template_name)
         context = {
-            'task_list': Task.objects.order_by('id'),
+            'task_list': Task.objects.filter(is_finished=True).order_by('id'),
+            'task_finished_list': Task.objects.filter(is_finished=False).order_by('id'),
         }
         return HttpResponse(template.render(context, request))
 

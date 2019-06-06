@@ -7,7 +7,7 @@
 
                 <div class="mdc-card demo-card status_card">
 
-                    <div class="mdc-typography--headline6 status_card_title">task title</div>
+                    <div class="mdc-typography--headline6 status_card_title">Remain Task</div>
 
                     {% if task_list %}
 
@@ -34,11 +34,11 @@
 
                 <div class="mdc-card demo-card status_card">
 
-                    <div class="mdc-typography--headline6 status_card_title">task title</div>
+                    <div class="mdc-typography--headline6 status_card_title">Finished Task</div>
 
-                    {% if task_list %}
+                    {% if task_finished_list %}
 
-                        {% for task in task_list %}
+                        {% for task in task_finished_list %}
                             <div class="mdc-card demo-card task_card">
 
                               <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
