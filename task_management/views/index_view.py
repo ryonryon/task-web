@@ -16,3 +16,11 @@ class IndexView(TemplateView):
         return HttpResponse(template.render(context, request))
 
 
+class TaskController:
+
+    def __init__(self):
+        pass
+
+    def add_task(self, user, title, detail, publish_date):
+
+        Task.objects.create(user=user, title=title, detail=detail, publish_date=publish_date, is_finished=False)
