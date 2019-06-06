@@ -1,8 +1,8 @@
 
 class Task:
 
-    def __init__(self, user_id, user, title, detail, publish_date, is_finished):
-        self.user_id = user_id
+    def __init__(self, task_id, user, title, detail, publish_date, is_finished):
+        self.task_id = task_id
         self.user = user
         self.title = title
         self.detail = detail

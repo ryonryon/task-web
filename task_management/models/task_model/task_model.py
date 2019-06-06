@@ -2,7 +2,7 @@ from django.db import models
 
 import uuid
 
-from .user_model import UserModel
+from task_management.models.user_model.user_model import UserModel
 
 
 class TaskModel(models.Model):
