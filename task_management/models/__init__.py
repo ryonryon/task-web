@@ -1,2 +1,2 @@
-from .task import Task
-from .user import User
+from .task_model import TaskModel
+from .user_model import UserModel
