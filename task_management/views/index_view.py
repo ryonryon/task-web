@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
-from ..models.task_model.task_list import TaskList
+from task_management.models.task_list import TaskList
 
 
 class IndexView(TemplateView):
