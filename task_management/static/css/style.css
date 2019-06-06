@@ -1,0 +1,14 @@
+
+.status_card {
+    background-color: #EFF1F3;
+}
+.status_card_title {
+    height: 20px;
+
+}
+
+.task_card {
+    background-color: #FFFFFF;
+    margin-top: 8px;
+    padding: 8px 8px 8px 8px;
+}
