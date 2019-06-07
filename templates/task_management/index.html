@@ -2,61 +2,40 @@
 {% block content %}
 
     <div class="mdc-layout-grid mdc-layout-grid--align-left demo-grid demo-grid--alignment">
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell demo-cell">
+       <div class="mdc-layout-grid__inner">
 
-                <div class="mdc-card demo-card status_card">
+            {% if task_status_list %}
+                {% for task_status in task_status_list %}
 
-                    <div class="mdc-typography--headline6 status_card_title">Remain Task</div>
+                    <div class="mdc-layout-grid__cell demo-cell">
 
-                    {% if task_list %}
+                        <div class="mdc-card demo-card status_card">
 
-                        {% for task in task_list %}
-                            <div class="mdc-card demo-card task_card">
+                            <div class="mdc-typography--headline6 status_card_title">{{ task_status.status }}</div>
 
-                              <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
-                                <div class="demo-card__primary">
-                                  <h2 class="demo-card__title mdc-typography mdc-typography--headline6">
-                                      <a href="/{{ task.user_id }}/"> {{ task.title }}</a>
-                                  </h2>
-                                  <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">{{ task.user.user_name }}</h3>
-                                </div>
-                                <div class="demo-card__secondary mdc-typography mdc-typography--body2">{{ task.detail }}</div>
-                              </div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
+                            {% if task_status.status %}
 
-                </div>
+                                {% for task in task_status.status %}
+                                    <div class="mdc-card demo-card task_card">
 
-            </div>
-            <div class="mdc-layout-grid__cell demo-cell">
-
-                <div class="mdc-card demo-card status_card">
-
-                    <div class="mdc-typography--headline6 status_card_title">Finished Task</div>
-
-                    {% if task_finished_list %}
-
-                        {% for task in task_finished_list %}
-                            <div class="mdc-card demo-card task_card">
-
-                              <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
-                                <div class="demo-card__primary">
-                                  <h2 class="demo-card__title mdc-typography mdc-typography--headline6">
-                                      <a href="/{{ task.id }}/"> {{ task.title }}</a>
-                                  </h2>
-                                  <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">{{ task.user.user_name }}</h3>
-                                </div>
-                                <div class="demo-card__secondary mdc-typography mdc-typography--body2">{{ task.detail }}</div>
-                              </div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-
-                </div>
-
-            </div>
+                                      <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
+                                        <div class="demo-card__primary">
+                                          <h2 class="demo-card__title mdc-typography mdc-typography--headline6">
+                                              <a href="/{{ task.id }}/"> {{ task.title }}</a>
+                                          </h2>
+                                          <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">{{ task.user.user_name }}</h3>
+                                        </div>
+                                        <div class="demo-card__secondary mdc-typography mdc-typography--body2">{{ task.detail }}</div>
+                                      </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div>there is no date</div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

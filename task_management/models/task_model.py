@@ -2,6 +2,7 @@ from django.db import models
 
 import uuid
 
+from task_management.models.task_status import TaskStatus
 from task_management.models.user_model import UserModel
 
 
@@ -16,7 +17,9 @@ class TaskModel(models.Model):
 
     publish_date = models.DateTimeField('date published')
 
-    is_finished = models.BooleanField(default=False)
+    # is_finished = models.BooleanField(default=False)
+
+    status = models.ForeignKey(TaskStatus, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
