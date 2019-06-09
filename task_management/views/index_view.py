@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
 from task_management.models.task_model import TaskModel
-from task_management.models.task_status import TaskStatus
+from task_management.models.task_status_model import TaskStatusModel
 from task_management.models.task import Task
 
 
@@ -18,11 +18,11 @@ class IndexView(TemplateView):
 
     def get_status_lists(self, task_list):
 
-        task_state = TaskStatus.objects.all()
+        task_state = TaskStatusModel.objects.all()
 
         task_dict = {'task_status_list': task_state}
 
-        for task_status in TaskStatus.objects.order_by('id'):
+        for task_status in TaskStatusModel.objects.order_by('id'):
 
             task_status_list = []
 
