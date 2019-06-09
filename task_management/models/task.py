@@ -1,10 +1,9 @@
 
 class Task:
 
-    def __init__(self, task_id, user, title, detail, publish_date, status):
+    def __init__(self, task_id, status, title, detail, publish_date):
         self.task_id = task_id
-        self.user = user
+        self.status = status
         self.title = title
         self.detail = detail
         self.publish_date = publish_date
-        self.status = status
