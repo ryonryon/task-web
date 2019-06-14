@@ -1,9 +1,12 @@
+body{
+    margin: 0;
+}
 
 .status_card {
     background-color: #EFF1F3;
-    width: 320px;
     margin: 8px 8px 8px 8px;
 }
+
 .status_card_title {
     padding: 8px 8px 8px 8px;
 
@@ -11,7 +14,10 @@
 
 .task_card {
     background-color: #FFFFFF;
-    width: 300px;
     margin: 0px 8px 8px 8px;
     padding: 8px 8px 8px 8px;
+}
+
+.mdc-layout-grid__cell {
+    grid-column-end: span 3;
 }
